@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Official Brand Colors: Navy + Gold + White */
+    --color-navy-base: #07162C;
+    --color-navy-dark: #040D1A;
+    --color-navy-elevated: #0A1C36;
+    --color-navy-surface: #0E2442;
+    --color-navy-border: rgba(197, 160, 89, 0.18);
+
+    --color-gold-primary: #C5A059;
+    --color-gold-light: #DFBF7A;
+    --color-gold-dark: #9B7832;
+    --color-gold-glow: rgba(197, 160, 89, 0.35);
+
+    --color-pure-white: #FFFFFF;
+    --color-off-white: #F8FAFC;
+    --color-slate-text: #94A3B8;
+    --color-slate-dark: #475569;
+
+    --color-status-green: #10B981;
+    --color-alert-red: #EF4444;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-navy-dark);
+    color: var(--color-off-white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Accessible Focus Rings with Gold Accent */
+  :focus-visible {
+    outline: 2px solid var(--color-gold-primary);
+    outline-offset: 3px;
+  }
+}
+
+/* Master Architectural Surface Tokens */
+.elite-surface {
+  background: rgba(10, 28, 54, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(197, 160, 89, 0.18);
+}
+
+.elite-surface-card {
+  background: #091A32;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.elite-surface-card:hover {
+  border-color: rgba(197, 160, 89, 0.45);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5), 0 0 18px -4px rgba(197, 160, 89, 0.15);
+}
+
+.elite-surface-active {
+  background: rgba(14, 36, 66, 0.95);
+  border: 1px solid #C5A059;
+  box-shadow: 0 0 24px -4px rgba(197, 160, 89, 0.25);
+}
+
+/* Architectural Hairline Borders */
+.hairline-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hairline-border-gold {
+  border: 1px solid rgba(197, 160, 89, 0.28);
+}
+
+/* Master CTA & Tactile Button Suite */
+.tactile-button {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 2px;
+  min-height: 44px; /* Touch-target ergonomics */
+  padding: 0.65rem 1.4rem;
+  font-weight: 700;
+}
+
+.tactile-button-gold {
+  background: linear-gradient(135deg, #DFBF7A 0%, #C5A059 100%);
+  color: #040D1A;
+  border: 1px solid #C5A059;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.25);
+}
+
+.tactile-button-gold:hover {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #040D1A;
+  box-shadow: 0 0 24px rgba(223, 191, 122, 0.55);
+  transform: translateY(-1px);
+}
+
+.tactile-button-navy {
+  background-color: #0A1C36;
+  color: #FFFFFF;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+.tactile-button-navy:hover {
+  border-color: #C5A059;
+  color: #DFBF7A;
+  background-color: #0E2442;
+  transform: translateY(-1px);
+}
+
+.tactile-button-outline {
+  background-color: transparent;
+  color: #F8FAFC;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.tactile-button-outline:hover {
+  border-color: #C5A059;
+  color: #DFBF7A;
+  background-color: rgba(197, 160, 89, 0.06);
+}
+
+/* Text Gradients & Gold Accents */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 40%, #DFBF7A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-pure {
+  color: #C5A059;
+}
+
+/* Subtle Architectural Grid Background */
+.bg-architectural-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(197, 160, 89, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 160, 89, 0.04) 1px, transparent 1px);
+}
+
+/* Legacy & Surveillance Grid compatibility */
+.bg-security-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Architectural Section Divider */
+.section-divider-gold {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(197, 160, 89, 0.25) 15%, rgba(197, 160, 89, 0.25) 85%, transparent 100%);
+}
+
+/* Custom Technical Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040D1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #112847;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
